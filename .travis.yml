@@ -1,0 +1,47 @@
+language: python
+
+python: '3.6'
+sudo: false
+
+matrix:
+  include:
+    - python: '3.6'
+      env:
+        - APP=api_lambda
+        - PYTHONPATH=$TRAVIS_BUILD_DIR/$APP:$PYTHONPATH
+        - LAMBDA_NAME=ApiLambda
+    - python: '3.6'
+      env:
+        - APP=persist_rds_lambda
+        - PYTHONPATH=$TRAVIS_BUILD_DIR/$APP:$PYTHONPATH
+        - LAMBDA_NAME=PersistOnRdsLambda
+    - python: '3.6'
+      env:
+        - APP=store_s3_lambdas
+        - PYTHONPATH=$TRAVIS_BUILD_DIR/$APP:$PYTHONPATH
+        - LAMBDA_NAME=StoreOnS3Lambda
+
+
+before_install:
+  - cd $APP
+
+before_deploy:
+  - ../.travis/zip_lambdas.sh $LAMBDA_NAME
+
+install: true
+
+script:
+  - pytest -s
+
+deploy:
+  - env:
+    provider:          s3
+    access_key_id:     $AWS_ACCESS_KEY_ID
+    secret_access_key: $AWS_SECRET_ACCESS_KEY
+    bucket:            $AWS_BUCKET
+    region:            $AWS_BUCKET_REGION
+    acl:               private
+    local_dir:         build_dir
+    skip_cleanup:      true
+    on:
+      all_branches: true

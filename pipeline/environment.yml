@@ -1,0 +1,46 @@
+name: my_env
+channels:
+  - defaults
+dependencies:
+  - attrs=17.4.0=py36_0
+  - boto3=1.5.32=py36_0
+  - botocore=1.8.46=py36_0
+  - ca-certificates=2017.08.26=ha1e5d58_0
+  - certifi=2018.1.18=py36_0
+  - docutils=0.14=py36hbfde631_0
+  - intel-openmp=2018.0.0=8
+  - jmespath=0.9.3=py36h767a2d6_0
+  - libcxx=4.0.1=h579ed51_0
+  - libcxxabi=4.0.1=hebd6815_0
+  - libedit=3.1=hb4e282d_0
+  - libffi=3.2.1=h475c297_4
+  - libgfortran=3.0.1=h93005f0_2
+  - mkl=2018.0.2=1
+  - ncurses=6.0=hd04f020_2
+  - numpy=1.14.2=py36ha9ae307_0
+  - openssl=1.0.2n=hdbc3d79_0
+  - pandas=0.22.0=py36h0a44026_0
+  - pip=9.0.1=py36_5
+  - pluggy=0.6.0=py36hb1d0581_0
+  - py=1.5.2=py36ha69170d_0
+  - pytest=3.4.2=py36_0
+  - python=3.6.4=hc167b69_3
+  - python-dateutil=2.7.0=py36_0
+  - pytz=2018.3=py36_0
+  - readline=7.0=hc1231fa_4
+  - s3transfer=0.1.13=py36_0
+  - setuptools=38.5.1=py36_0
+  - six=1.11.0=py36h0e22d5e_1
+  - sqlite=3.22.0=h3efe00b_0
+  - tk=8.6.7=h35a86e2_3
+  - wheel=0.30.0=py36h5eb2c71_1
+  - xz=5.2.3=h0278029_2
+  - zlib=1.2.11=hf3cbc9b_2
+  - pip:
+    - awscli==1.14.63
+    - colorama==0.3.7
+    - psycopg2==2.7.4
+    - pyasn1==0.4.2
+    - pyyaml==3.12
+    - rsa==3.4.2
+    - sqlalchemy==1.2.5
