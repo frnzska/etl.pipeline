@@ -5,21 +5,19 @@ region: eu-west-1
 PersistRdsLambda:
   fct_name: PersistOnRdsLambda
   stage: staging
-  env_vars: {
-    host: 'somehost.xyz.eu-west-1.rds.amazonaws.com', # replace with your host endpoint
-    port: 5432,
-    user: 'root',  # replace with your user name
-    db_name:  'dwh',  # replace with your db name
+  env_vars:
+    host: 'somehost.xyz.eu-west-1.rds.amazonaws.com' # replace with your host endpoint
+    port: 5432
+    user: 'root'  # replace with your user name
+    db_name:  'dwh'  # replace with your db name
     password: 'XXXXXXX'  # replace with your password
-  }
 
 StoreS3Lambda:
   fct_name: StoreOnS3Lambda
   stage: staging
-  env_vars: {
-    store_bucket: some_existing_bucket,  # replace with your bucket where events should be stored
+  env_vars:
+    store_bucket: some_existing_bucket  # replace with your bucket where events should be stored
     s3_key: WebhookEvents
-    }
 
 Statemachine:
   name: StoreWebhookEventsSfn

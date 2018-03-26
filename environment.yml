@@ -37,10 +37,14 @@ dependencies:
   - xz=5.2.3=h0278029_2
   - zlib=1.2.11=hf3cbc9b_2
   - pip:
+    - awacs==0.6.2
     - awscli==1.14.63
+    - cfn-flip==1.0.3
+    - click==6.7
     - colorama==0.3.7
     - psycopg2==2.7.4
     - pyasn1==0.4.2
     - pyyaml==3.12
     - rsa==3.4.2
     - sqlalchemy==1.2.5
+    - troposphere==1.9.3
