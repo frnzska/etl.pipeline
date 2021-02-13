@@ -1,12 +1,12 @@
 S3LambdaDeploymentBucket: some_exsiting_bucket # replace with the bucket name where the zipped lambdas live
-account_nr: 12345678 # replace with your account number
+account_nr: <AccountNumber>
 region: eu-west-1
 
 PersistRdsLambda:
   fct_name: PersistOnRdsLambda
   stage: staging
   env_vars:
-    host: 'somehost.xyz.eu-west-1.rds.amazonaws.com' # replace with your host endpoint
+    host: <somehost.xyz.eu-west-1.rds.amazonaws.com>
     port: 5432
     user: 'root'  # replace with your user name
     db_name:  'dwh'  # replace with your db name
